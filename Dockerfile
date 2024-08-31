@@ -11,7 +11,7 @@ COPY . /app
 RUN pip install --no-cache-dir requests
 
 # Make the script executable
-RUN chmod +x pinger.py
+RUN chmod +x nfl-pinger.py
 
 # Run the pinger script when the container launches
 CMD ["python", "nfl-pinger.py"]

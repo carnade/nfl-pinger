@@ -4,7 +4,7 @@ import requests
 import json
 
 # URL to POST to
-url = "https://xyz.ploomber.com/getplayers"
+url = "https://silent-dew-3400.ploomber.com/getplayers"
 
 # Payload to send in the POST request
 payload = [
@@ -20,8 +20,10 @@ payload = [
 
 # Function to perform the POST request
 def ping():
+    print("Making POST request...")
     try:
         response = requests.post(url, json=payload)
+        print(f"Response status code: {response.status_code}")
         if response.status_code == 200:
             print("POST request successful")
         else:
@@ -30,11 +32,14 @@ def ping():
         print(f"Error occurred during POST request: {e}")
 
 if __name__ == "__main__":
+    print("Starting...")
     while True:
         # Random delay between 6 and 8 hours
-        delay = random.uniform(6 * 3600, 8 * 3600)
+        print("So lets PING then shall we!")
+        ping()
+        delay = random.uniform(1 * 3600, 2 * 3600)
         print(f"Waiting for {delay / 3600:.2f} hours before making the next POST request.")
         time.sleep(delay)
 
         # Make the POST request
-        ping()
+
