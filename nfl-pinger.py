@@ -20,7 +20,7 @@ payload = [
 
 # Function to perform the POST request
 def ping():
-    print("Making POST request...")
+    print(f"{time.ctime()} Making POST request...")
     try:
         response = requests.post(url, json=payload)
         print(f"Response status code: {response.status_code}")
